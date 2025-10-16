@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberStorm Visning</title>
+<link rel="stylesheet" href="styles.css" />
+
+</head>
+<body class="tv-page">
+    <img src="cybersec-left-logo-rgb-neg-720x168-png.webp" alt="Cyberstorm Logo" class="logo" />
+    <h1>CyberStorm – Uppdrag pågår</h1>
+
+    <div id="timer-section" class="hidden">
+        <div id="timer">--:--</div>
+    </div>
+
+    <div id="servers" class="hidden"></div>
+
+    <div id="setup">
+        <label for="groupCount">Hur många grupper deltar?</label>
+        <input type="number" id="groupCount" min="1" max="10" />
+        <button onclick="startMission()">Starta uppdrag</button>
+    </div>
+    <script src="admin.js" defer></script>
+</body>
+</html>

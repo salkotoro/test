@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin – Lägg till grupp</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+    <body class="admin-page">
+    <img src="cybersec-left-logo-rgb-neg-720x168-png.webp" alt="Cyberstorm Logo" class="logo" />
+
+    <h1 class="admin-title">Registrera Grupp</h1>
+
+    <div class="admin-shell">
+        <!-- FORM CARD -->
+        <form
+                id="groupForm"
+                class="admin-card"
+                data-expected='["PIXELPÄRON","CYBERCITRON","DATADRUVA","FIKONFIL"]'
+                data-duration="45"
+                autocomplete="off"
+        >
+            <div class="card-head">
+                <div class="card-title">Grupp & Kodord</div>
+                <div class="badges">
+                    <span class="pill" title="Sessionstid">⏱ <strong id="badge-mins">45</strong> min</span>
+                    <span class="pill pill--timer" id="timer-state-pill-top" title="Timerstatus">Kör</span>
+                    <span class="pill pill--orange" title="Antal kodord">
+                      <strong id="badge-words">6</strong> kodord
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <input class="admin-input" type="text" id="group" placeholder="Gruppnamn" required />
+            </div>
+
+            <hr class="hr-glow" />
+
+            <div id="codeword-fields"></div>
+
+            <div style="margin-top:14px; display:grid; gap:10px;">
+                <button type="submit" class="btn full">Registrera</button>
+            </div>
+
+            <p class="subtle" style="margin-top:10px;">
+                Tips: Du kan ändra kodord & minuter direkt i HTML-attributen <code>data-expected</code> och <code>data-duration</code>.
+            </p>
+        </form>
+
+        <!-- ACTIONS CARD -->
+        <div class="admin-card">
+            <div class="card-head">
+                <div class="card-title">Snabbåtgärder</div>
+            </div>
+
+            <div class="admin-row" style="display:grid; gap:10px; margin-bottom:12px;">
+                <label for="server-count" class="subtle" style="display:flex; align-items:center; gap:8px;">
+                    <span class="pill pill--orange" id="current-servers-pill" title="Antal som visas på TV">—</span>
+                    Aktiva servrar
+                </label>
+                <div style="display:flex; gap:8px;">
+                    <input id="server-count" class="admin-input" type="number" min="1" max="50" placeholder="t.ex. 6" />
+                    <button id="apply-server-count-btn" class="btn">Spara</button>
+                </div>
+                <p class="subtle">Detta styr hur många serverrutor som visas i TV-vyn.</p>
+            </div>
+
+            <hr class="hr-glow"/>
+
+            <label class="row-label">
+                <span class="pill pill--timer" id="timer-state-pill-bottom" title="Timerstatus">Kör</span>
+                <span>Timerkontroll</span>
+            </label>
+
+            <div class="row-controls wrap left timer-adjust-row">
+                <button id="minus-1-btn" class="btn btn--ghost">−1 min</button>
+                <button id="minus-5-btn" class="btn btn--ghost">−5 min</button>
+
+                <button id="pause-timer-btn" class="btn btn--ghost">⏸️ Pausa</button>
+                <button id="resume-timer-btn" class="btn btn--ghost">▶️ Fortsätt</button>
+
+                <button id="plus-5-btn" class="btn btn--ghost">+5 min</button>
+                <button id="plus-1-btn" class="btn btn--ghost">+1 min</button>
+
+            </div>
+
+            <div style="display:grid; gap:10px;">
+                <div class="admin-actions-row">
+                    <div class="left-actions">
+
+                        <button id="reset-timer-btn" class="btn btn--ghost full">⏱️ Starta om timer</button>
+                        <button id="reset-groups-btn" class="btn btn--danger full">🗑️ Nollställ grupper</button>
+                    </div>
+
+                    <div class="right-actions">
+                        <div class="row-controls wrap">
+                            <button id="set-45-btn" class="btn btn--ghost">45 min</button>
+                            <button id="set-90-btn" class="btn btn--ghost">90 min</button>
+                        </div>
+                        <p class="help-text gametime-help">
+                            45 min = 4 kodord<br>
+                            90 min = 6 kodord
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="admin.js" defer></script>
+    </body>
+</html>
